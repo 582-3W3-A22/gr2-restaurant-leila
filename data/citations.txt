@@ -1,0 +1,31 @@
+---- Gastronomie
+-- FR
+"L'homme est bon, mais le veau est meilleur.","Bertold Brecht"
+"Chaque repas que l'on fait est un repas de moins à faire.","Vladimir Jankélévitch"
+"La gourmandise commence quand on n'a plus faim.","Alphonse Daudet"
+"Le plus grand outrage qu'on l'on puisse faire à un gourmand, c'est de l'interrompre dans l'exercice de ses mâchoires.","Alexandre Balthazar Grimod de la Reynière"
+-- EN
+"One cannot think well, love well, sleep well, if one has not dined well.","Virginia Woolf"
+"Ask not what you can do for your country. Ask what’s for lunch.","Orson Welles"
+"Everything you see I owe to spaghetti.","Sophia Loren"
+"After a good dinner one can forgive anybody, even one's own relations.","Oscar Wilde"
+"There is no love sincerer than the love of food.","George Bernard Shaw"
+"The only time to eat diet food is while you're waiting for the steak to cook.","Julia Child"
+"All you need is love. But a little chocolate now and then doesn't hurt.","Charles M. Schulz"
+---------
+
+---- Vin
+-- FR
+"Le vin est innocent, l'ivrogne seul est coupable.","Proverbe Russe"
+"Trop ou trop peu de vin interdit la vérité.","Blaise Pascal"
+"Plus il y a de marches, meilleure est la cave.","Proverbe bourguignon"
+"Mettre de l’eau dans son vin, c’est faire de la fausse monnaie.","Michel BOUVIER"
+"Jésus changeait l’eau en vin. Tu m’étonne que 12 mecs le suivaient partout.","Coluche"
+"L’homme doit au vin d’être le seul animal à boire sans soif.","Pline l'Ancien"
+
+-- EN
+"Either give me more wine or leave me alone.","Rumi"
+"I cook with wine. Sometimes I even add it to the food.","W. C. Fields"
+"The wine in the bottle does not quench thirst.","George Herbert"
+"A bottle of wine begs to be shared; I have never met a miserly wine lover.","Clifton Fadiman"
+"Penicillin cures, but wine makes people happy.","Alexander Fleming"
