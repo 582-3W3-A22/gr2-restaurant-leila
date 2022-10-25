@@ -18,5 +18,6 @@
     <br>Toute reproduction interdite excepté dans le cadre académique des cours 
     <br>au département de Techniques d'intégration multimédia au Collège de Maisonneuve
   </p>
+  <script src="js/leila.js"></script>
 </body>
 </html>
