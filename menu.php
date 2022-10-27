@@ -9,10 +9,12 @@
 <div class="contenu-principal">
       <div class="citation">
         <img src="images/menu-citation.jpg" alt="">
-        <blockquote>
-          <?= $citation['texte']; ?>
-          <cite>- <?= $citation['auteur']; ?></cite>
+        
+        <blockquote title="<?= $blockquoteTitle; ?>">
+          <span class="citation-texte"><?= $citation['texte']; ?></span>
+          <cite>- <span class="citation-auteur"><?= $citation['auteur']; ?></span></cite>
         </blockquote>
+        
       </div>
       <div class="carte">
         <section>

@@ -232,6 +232,7 @@ nav.nav-principale a.actif svg line {
   margin-left: 200px;
   padding-left: 20px;
   border-left: 1px solid #ccc;
+  cursor: pointer;
 }
 
 blockquote cite {

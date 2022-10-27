@@ -9,7 +9,7 @@
 <div class="contenu-principal">
       <div class="citation">
         <img src="images/vins-citation.png" alt="">
-        <blockquote>
+        <blockquote title="<?= $blockquoteTitle; ?>">
           <?= $citation['texte']; ?>
           <cite>- <?= $citation['auteur']; ?></cite>
         </blockquote>

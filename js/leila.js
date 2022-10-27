@@ -10,6 +10,18 @@ if(eltCitation !== null) {
 /**
  * Obtient une nouvelle citation aléatoire du serveur.
  */
-function changerCitation() {
+async function changerCitation() {
     console.log("OK je vais chercher une nouvelle citation...");
+    
+    // Étape 1 : chercher une citation aléatoire au serveur (script PHP)
+    // 1a : faire une requête HTTP et capturer la réponse
+    let reponse = await fetch('_ajax_citation.php');
+    
+    // 1b : sortir le contenu de la réponse
+    let citationJson = await reponse.json();
+    console.log("Réponse du serveur : ", citationJson);
+
+    // Étape 2 : injecter le texte et l'auteur de la citation obtenue à l'étape 1 dans la page (DOM)
+    eltCitation.querySelector('.citation-texte').innerHTML = citationJson.texte;
+    eltCitation.querySelector('.citation-auteur').innerHTML = citationJson.auteur;
 }

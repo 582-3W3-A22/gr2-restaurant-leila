@@ -24,6 +24,8 @@ $meta = [
                 ]
 ];
 
+$blockquoteTitle = "Click for new quote.";
+
 /********** ENTÊTE ********************/
 $entNomSite = "LEILA";
 $entSousTitre = "BISTRONOMIC CUISINE";
