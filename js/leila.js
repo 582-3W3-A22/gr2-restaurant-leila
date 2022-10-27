@@ -13,9 +13,14 @@ if(eltCitation !== null) {
 async function changerCitation() {
     console.log("OK je vais chercher une nouvelle citation...");
     
+    // Étape 0 : récupérer la section et la langue
+    let section = eltCitation.getAttribute('page');
+    let langue = eltCitation.getAttribute('langue');
+    // console.log("La page : ", section);
+
     // Étape 1 : chercher une citation aléatoire au serveur (script PHP)
     // 1a : faire une requête HTTP et capturer la réponse
-    let reponse = await fetch('_ajax_citation.php');
+    let reponse = await fetch(`_ajax_citation.php?section=${section}&langue=${langue}`);
     
     // 1b : sortir le contenu de la réponse
     let citationJson = await reponse.json();

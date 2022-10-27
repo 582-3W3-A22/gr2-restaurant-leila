@@ -9,9 +9,9 @@
 <div class="contenu-principal">
       <div class="citation">
         <img src="images/vins-citation.png" alt="">
-        <blockquote title="<?= $blockquoteTitle; ?>">
-          <?= $citation['texte']; ?>
-          <cite>- <?= $citation['auteur']; ?></cite>
+        <blockquote page="<?= $page ?>" langue="<?= $lan ?>"  title="<?= $blockquoteTitle; ?>">
+          <span class="citation-texte"><?= $citation['texte']; ?></span>
+          <cite>- <span class="citation-auteur"><?= $citation['auteur']; ?></span></cite>
         </blockquote>
       </div>
       <form class="frm-recherche">
