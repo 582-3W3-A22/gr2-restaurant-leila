@@ -14,8 +14,9 @@ async function changerCitation() {
     console.log("OK je vais chercher une nouvelle citation...");
     
     // Étape 0 : récupérer la section et la langue
-    let section = eltCitation.getAttribute('page');
-    let langue = eltCitation.getAttribute('langue');
+    let section = eltCitation.getAttribute('data-page');
+    // ou let section = eltCitation.dataset.page;
+    let langue = eltCitation.getAttribute('data-langue');
     // console.log("La page : ", section);
 
     // Étape 1 : chercher une citation aléatoire au serveur (script PHP)

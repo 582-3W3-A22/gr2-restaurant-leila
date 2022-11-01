@@ -9,7 +9,7 @@
 <div class="contenu-principal">
       <div class="citation">
         <img src="images/vins-citation.png" alt="">
-        <blockquote page="<?= $page ?>" langue="<?= $lan ?>"  title="<?= $blockquoteTitle; ?>">
+        <blockquote data-page="<?= $page ?>" data-langue="<?= $lan ?>"  title="<?= $blockquoteTitle; ?>">
           <span class="citation-texte"><?= $citation['texte']; ?></span>
           <cite>- <span class="citation-auteur"><?= $citation['auteur']; ?></span></cite>
         </blockquote>
