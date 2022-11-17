@@ -68,4 +68,26 @@ function determinerLangue($langueParDefaut, $languesDispos) {
     }
     return $lan;
 }
+
+/*********** [TP #1] MENU ET CARTE DES VINS ***********************************/
+/**
+ * Retourne les articles de la section spécifiée dans la langue active.
+ * 
+ * @param string $section : Identifiant de la page correspondant à la section.
+ * @param string $langue : Sigle (deux lettres) de la langue active sur le site.
+ * 
+ * @return array : Tableau de tableaux contenant l'info des articles demandés.
+ */
+function obtenirArticles($section, $langue) 
+{
+    // Si le fichier existe dans la langue existe...
+    if(file_exists("data/$section-$langue.json")) {
+        $articlesJson = file_get_contents("data/$section-$langue.json");
+    }
+    // ... sinon, on se rabat sur le fichier "en français"
+    else {
+        $articlesJson = file_get_contents("data/$section-fr.json");
+    }
+    return json_decode($articlesJson, true);
+}
 ?>

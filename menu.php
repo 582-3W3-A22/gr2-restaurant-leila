@@ -5,95 +5,63 @@
 
   // Gestion de la citation aléatoire
   $citation = obtenirCitationAleatoire($page, $lan);
+
+  // [TP #1] Gestion du menu
+  $menu = obtenirArticles($page, $lan);
 ?>
 <div class="contenu-principal">
       <div class="citation">
         <img src="images/menu-citation.jpg" alt="">
-        
-        <blockquote data-page="<?= $page ?>" data-langue="<?= $lan ?>"  title="<?= $blockquoteTitle; ?>">
+        <!-- 
+          Remarquez les attributs HTML 'data-section' et 'data-langue' dans 
+          l'élément BLOCKQUOTE ci-dessous ! On les utilise pour inclure dans le 
+          document HTML les valeurs des variables PHP qui nous seront utiles 
+          plus tard, de manière à pouvoir les récupérer en JavaScript.
+
+          Ces attributs HTML sont nommés avec le préfixe 'data-' pour produire 
+          un document HTML valide tout en y ajoutant des attributs personnalisés.
+
+          Référence (pour en apprendre plus) : 
+          https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes
+        -->
+        <blockquote data-section="<?= $page; ?>" data-langue="<?= $lan; ?>" title="<?= $comTitleCitation; ?>">
           <span class="citation-texte"><?= $citation['texte']; ?></span>
           <cite>- <span class="citation-auteur"><?= $citation['auteur']; ?></span></cite>
         </blockquote>
-        
+
       </div>
       <div class="carte">
+      <!-- [TP #1] Affichage dynamique du menu des plats -->
+      <!-- Un bloc HTML <section> par catégorie -->
+      <?php foreach ($menu as $titreSection => $articles) { ?>
         <section>
-          <h2>Entrées</h2>
+          <!-- On met le titre de chaque section tout en majuscule -->
+          <h2><?= mb_strtoupper($titreSection); ?></h2>
           <ul>
+          <!-- Un bloc HTML <li> par article de menu (plat) -->
+          <?php foreach ($articles as $article) { ?>
             <li>
-              <span>Escargots à la crème d’ail</span>
-              <span class="prix">31</span>
+              <span>
+                <?= $article['nom'] ?>
+                <!-- Le balisage suivant seulement si le plat a une description non-vide -->
+                <?php if($article['description'] !== '') { ?>
+                  <br><i><?= $article['description'] ?></i>
+                <?php } ?>
+              </span>
+              <span class="prix">
+                <!-- Le balisage suivant uniquement si la "portion" est plus que 1 -->
+                <?php if($article['portion'] > 1) { ?>
+                  <i class="article-menu-portion">(<?= $mnuEtiquettePortion ?> <?= $article['portion'] ?>)</i>
+                <?php } ?>
+                <?= $article['prix'] ?>
+              </span>
             </li>
-            <li>
-              <span>Foie gras de canard poêlé aux coings<br><i>gâteau et infusion de coing à la verveine</i></span>
-              <span class="prix"><i class="article-menu-portion">(pour 2 personnes)</i>34</span>
-            </li>
-            <li>
-              <span>Jardin de champignons d’automne<br><i>crème de cèpes, émulsion au thé noir</i></span>
-              <span class="prix">33</span>
-            </li>
+          <?php } ?>
+          <!-- Fin du LI -->
           </ul>
         </section>
-        <section>
-          <h2>Poissons</h2>
-          <ul>
-            <li>
-              <span>Sandre à la peau croustillante<br><i>fondue d’échalotes, sauce au vin rouge</i></span>
-              <span class="prix">42</span>
-            </li>
-            <li>
-              <span>Saint-pierre rôti aux olives taggiasche<br><i>mousseline d’artichaut, fumet de poisson au citron kalamansi</i></span>
-              <span class="prix">49</span>
-            </li>
-            <li>
-              <span>Bar cuit à la vapeur et criste marine<br><i>déclinaison de riz et coquillages, jus au curcuma</i></span>
-              <span class="prix"><i class="article-menu-portion">(pour 2 personnes)</i>58</span>
-            </li>
-          </ul>
-        </section>
-        <section>
-          <h2>Viandes</h2>
-          <ul>
-            <li>
-              <span>Côte de porcelet et poitrine de cochon du Cantal croustillant<br><i>légumes de saison et crémeux de céleri-rave</i></span>
-              <span class="prix">42</span>
-            </li>
-            <li>
-              <span>Filet de canette rôti sur la peau, jus au porto infusé à l’hibiscus<br><i>tartelette de figues et cuisse confite, petite chartreuse de figues</i></span>
-              <span class="prix">44</span>
-            </li>
-            <li>
-              <span>Ris de veau doré au sautoir et cèpes<br><i>mousseline de cèpes, jus de veau à la cazette du Morvan</i></span>
-              <span class="prix">63</span>
-            </li>
-          </ul>
-        </section>
-        <section>
-          <h2>Fromages</h2>
-          <ul>
-            <li>
-              <span>Chariot de fromages affinés de nos régions</span>
-              <span class="prix">12</span>
-            </li>
-          </ul>
-        </section>
-        <section>
-          <h2>Desserts</h2>
-          <ul>
-            <li>
-              <span>Poire Louise Bonne pochée au citron doux<br><i>parfait glacé à la Nepeta, crumble de petit épeautre</i></span>
-              <span class="prix">13</span>
-            </li>
-            <li>
-              <span>Fleur de cassis de Bourgogne<br><i>chiboust à la vanille et chocolat grand cru de Madagascar</i></span>
-              <span class="prix">13</span>
-            </li>
-            <li>
-              <span>Tarte fine aux pommes de Bernard Loiseau<br><i>sorbet pomme verte</i></span>
-              <span class="prix">12</span>
-            </li>
-          </ul>
-        </section>
+      <?php } ?>
+      <!-- Fin de la SECTION -->
       </div>
     </div>
 <?php include('inclusions/pied2page.inc.php'); ?>

@@ -1,0 +1,94 @@
+{
+    "entrées": [
+        {
+            "nom": "Escargots à la crème d’ail",
+            "description": "",
+            "portion": 1,
+            "prix": 31
+        },
+        {
+            "nom": "Foie gras de canard poêlé aux coings",
+            "description": "gâteau et infusion de coing à la verveine",
+            "portion": 2,
+            "prix": 34
+        },
+        {
+            "nom": "Jardin de champignons d’automne",
+            "description": "crème de cèpes, émulsion au thé noir",
+            "portion": 1,
+            "prix": 33
+        }
+    ],
+
+    "poissons": [
+        {
+            "nom": "Sandre à la peau croustillante",
+            "description": "fondue d’échalotes, sauce au vin rouge",
+            "portion": 1,
+            "prix": 42
+        },
+        {
+            "nom": "Saint-pierre rôti aux olives taggiasche",
+            "description": "mousseline d’artichaut, fumet de poisson au citron kalamansi",
+            "portion": 1,
+            "prix": 49
+        },
+        {
+            "nom": "Bar cuit à la vapeur et criste marine",
+            "description": "déclinaison de riz et coquillages, jus au curcuma",
+            "portion": 2,
+            "prix": 58
+        }
+    ],
+
+    "viandes": [
+        {
+            "nom": "Côte de porcelet et poitrine de cochon du Cantal croustillant",
+            "description": "égumes de saison et crémeux de céleri-rave",
+            "portion": 1,
+            "prix": 42
+        },
+        {
+            "nom": "Filet de canette rôti sur la peau, jus au porto infusé à l’hibiscus",
+            "description": "tartelette de figues et cuisse confite, petite chartreuse de figues",
+            "portion": 1,
+            "prix": 44
+        },
+        {
+            "nom": "Ris de veau doré au sautoir et cèpes",
+            "description": "mousseline de cèpes, jus de veau à la cazette du Morvan",
+            "portion": 1,
+            "prix": 63
+        }
+    ],
+
+    "fromages": [
+        {
+            "nom": "Chariot de fromages affinés de nos régions",
+            "description": "",
+            "portion": 1,
+            "prix": 12
+        }
+    ],
+
+    "desserts": [
+        {
+            "nom": "Poire Louise Bonne pochée au citron doux",
+            "description": "parfait glacé à la Nepeta, crumble de petit épeautre",
+            "portion": 1,
+            "prix": 13
+        },
+        {
+            "nom": "Fleur de cassis de Bourgogne",
+            "description": "chiboust à la vanille et chocolat grand cru de Madagascar",
+            "portion": 1,
+            "prix": 13
+        },
+        {
+            "nom": "Tarte fine aux pommes de Bernard Loiseau",
+            "description": "sorbet pomme verte",
+            "portion": 1,
+            "prix": 12
+        }
+    ]
+}

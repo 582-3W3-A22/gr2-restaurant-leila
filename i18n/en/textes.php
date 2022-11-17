@@ -24,7 +24,7 @@ $meta = [
                 ]
 ];
 
-$blockquoteTitle = "Click for new quote.";
+$comTitleCitation = "Click to display a new quote.";
 
 /********** ENTÊTE ********************/
 $entNomSite = "LEILA";
@@ -51,7 +51,7 @@ $acPara2 = "One of the oldest buildings in the city in... rue Neuve, you can't m
 $acImageAlt = "In the kitchen";
 
 /********** MENU **********************/
-// Aucun texte statique pour le moment
+$mnuEtiquettePortion = "servings : ";
 
 /********** CARTE DES VINS ************/
 $vinRechercheEtiquette = "Search : ";
