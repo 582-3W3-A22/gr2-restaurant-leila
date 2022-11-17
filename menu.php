@@ -6,7 +6,7 @@
   // Gestion de la citation aléatoire
   $citation = obtenirCitationAleatoire($page, $lan);
 
-  // [TP #1] Gestion du menu
+  // Gestion du menu
   $menu = obtenirArticles($page, $lan);
 ?>
 <div class="contenu-principal">
@@ -31,7 +31,7 @@
 
       </div>
       <div class="carte">
-      <!-- [TP #1] Affichage dynamique du menu des plats -->
+      <!-- Affichage dynamique du menu des plats -->
       <!-- Un bloc HTML <section> par catégorie -->
       <?php foreach ($menu as $titreSection => $articles) { ?>
         <section>

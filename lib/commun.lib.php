@@ -69,7 +69,7 @@ function determinerLangue($langueParDefaut, $languesDispos) {
     return $lan;
 }
 
-/*********** [TP #1] MENU ET CARTE DES VINS ***********************************/
+/*********** MENU ET CARTE DES VINS ***********************************/
 /**
  * Retourne les articles de la section spécifiée dans la langue active.
  * 
@@ -80,14 +80,30 @@ function determinerLangue($langueParDefaut, $languesDispos) {
  */
 function obtenirArticles($section, $langue) 
 {
-    // Si le fichier existe dans la langue existe...
-    if(file_exists("data/$section-$langue.json")) {
-        $articlesJson = file_get_contents("data/$section-$langue.json");
+    // Déterminer le nom de la table de la BD.
+    $table = ($section === 'menu') ? 'plat' : 'vin';
+
+    // Connexion
+    $cnx = mysqli_connect('localhost', 'root', '', 'leila');
+    mysqli_set_charset($cnx, 'utf8');
+
+    // Requête SQL
+    $sql = "SELECT  t.*,
+                    c.nom AS nomCat
+            FROM $table         AS t
+                JOIN categorie  AS c
+                    ON t.categorie_id = c.id
+            ORDER BY c.id, t.prix";
+    
+    // Exécuter la requête et obtenir le jeu d'enregistrements correspondant
+    $resultat = mysqli_query($cnx, $sql);
+
+    // Produire un tableau contenant les articles (enregistrements)
+    $articles = [];
+    while ($enreg = mysqli_fetch_assoc($resultat)) {
+        $cat = $enreg['nomCat'];
+        $articles[$cat][] = $enreg;
     }
-    // ... sinon, on se rabat sur le fichier "en français"
-    else {
-        $articlesJson = file_get_contents("data/$section-fr.json");
-    }
-    return json_decode($articlesJson, true);
+    return $articles;
 }
 ?>
